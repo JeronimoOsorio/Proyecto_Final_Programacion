@@ -15,6 +15,17 @@ public class LineaPedido {
     public LineaPedido() {
     }
 
+    // CONSTRUCTOR SIN SUBTOTAL (se calcula automáticamente)
+    
+    public LineaPedido(int id, int pedidoId, int productoId, int cantidad, double precioUnitario) {
+        this.id             = id;
+        this.pedidoId       = pedidoId;
+        this.productoId     = productoId;
+        this.cantidad       = cantidad;
+        this.precioUnitario = precioUnitario;
+        this.subtotal       = cantidad * precioUnitario;
+    }
+
     // CONSTRUCTOR LLENO
 
     public LineaPedido(int id, int pedidoId, int productoId, int cantidad, double precioUnitario, double subtotal) {
@@ -23,8 +34,10 @@ public class LineaPedido {
         this.productoId = productoId;
         this.cantidad = cantidad;
         this.precioUnitario = precioUnitario;
-        this.subtotal = subtotal;
+        this.subtotal = cantidad * precioUnitario;
     }
+
+
 
     // Getters y Setters
 
@@ -82,10 +95,5 @@ public class LineaPedido {
     public String toString() {
         return "LineaPedido [id=" + id + ", pedidoId=" + pedidoId + ", productoId=" + productoId + ", cantidad="
                 + cantidad + ", precioUnitario=" + precioUnitario + ", subtotal=" + subtotal + "]";
-    }
-
-    
-    
-
-    
+    }    
 }

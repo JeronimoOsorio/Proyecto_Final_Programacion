@@ -39,7 +39,7 @@ public interface ProductoDAO {
         @return Producto encontrado o null si no existe
     */
 
-    Producto buscar(int id);
+    Producto buscarPorId(int id);
 
     /**
         Actualiza los datos de un producto existente.
