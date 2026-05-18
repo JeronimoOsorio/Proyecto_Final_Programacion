@@ -139,7 +139,7 @@ public class ProductoDAOImpl implements ProductoDAO {
         return false;
     }
 
-    // ── cambiarDisponibilidad ────────────────────────────────────────
+    // cambiarDisponibilidad
     @Override
     public boolean cambiarDisponibilidad(int id, boolean disponible) {
         String sql = "UPDATE productos SET disponible = ? WHERE id = ?";
